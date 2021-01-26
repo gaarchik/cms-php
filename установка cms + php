@@ -1,0 +1,5 @@
+cd /var/www/html
+sudo chmod 777 /var/www/
+sudo apt-get install wget
+wget --content-disposition https://get.typo3.org/10.4.12
+tar -xzvf 
