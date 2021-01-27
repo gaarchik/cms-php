@@ -2,4 +2,15 @@ cd /var/www/html
 sudo chmod 777 /var/www/
 sudo apt-get install wget
 wget --content-disposition https://get.typo3.org/10.4.12
-tar -xzvf 
+tar -xzvf typo3_src-10.4.12.tar.gz
+sudo mv typo3_src-10.4.12/* /var/www/html/
+sudo rm -R typo3_src-10.4.12
+sudo rm  typo3_src-10.4.12.tar.gza
+CREATE DATABASE type3;
+CREATE USER typo3 WITH password 'typo3';
+GRANT ALL PRIVILEGES ON DATABASE type3 to typo3;
+rm /var/www/html/index.html /var/www/html/index.nginx-debian.html 
+sudo systemctl restart apache2
+nano /var/www/html/FIRST_INSTALL
+sudo apt-get install php7.3-gd php7.3-xml php7.3-zip php7.3-intl
+name typo3 password typo3 database type3
